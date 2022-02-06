@@ -1,0 +1,145 @@
+.container {
+  width: 600px;
+  height: 900px;
+  margin: auto;
+}
+.min {
+  width: 150px;
+  height: 100px;
+  display: inline-block;
+  margin: 50px;
+  font-size: 30px;
+  text-align: center;
+}
+#min-value {
+  width: 100%;
+  height: 70%;
+  background-color: #f24423;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.max {
+  width: 150px;
+  height: 100px;
+  float: right;
+  margin: 50px;
+  font-size: 30px;
+  text-align: center;
+}
+
+#max-value {
+  width: 100%;
+  height: 70%;
+  background-color: #54ac21;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Score */
+
+.score-box {
+  width: 320px;
+  height: 150px;
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+}
+
+#score-value {
+  width: 100%;
+  height: 70%;
+  background-color: #b3b3b3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  border: 3px solid black;
+}
+/* Number Input */
+
+.calc {
+  width: 300px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  grid-template:
+    "one two three"
+    "four five six"
+    "seven eight nine"
+    "blank1 zero blank2"
+    "enter enter enter";
+}
+
+.calc div {
+  font-size: 30px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+  border: 3px solid black;
+}
+
+#one {
+  background-color: #668119;
+  grid-area: one;
+}
+#two {
+  background-color: #f46526;
+  grid-area: two;
+}
+#three {
+  background-color: #668119;
+  grid-area: three;
+}
+#four {
+  background-color: #f46526;
+  grid-area: four;
+}
+#five {
+  background-color: #f46526;
+  grid-area: five;
+}
+#six {
+  background-color: #f46526;
+  grid-area: six;
+}
+#seven {
+  background-color: #668119;
+  grid-area: seven;
+}
+#eight {
+  background-color: #f46526;
+  grid-area: eight;
+}
+#nine {
+  background-color: #668119;
+  grid-area: nine;
+}
+#zero {
+  background-color: rgb(130, 51, 101);
+  grid-area: zero;
+  color: white;
+}
+#blank1 {
+  grid-area: blank1;
+  border: 0;
+}
+#blank2 {
+  grid-area: blank2;
+  border: 0;
+}
+
+#enter {
+  grid-area: enter;
+  background-color: black;
+  color: white;
+  border-radius: 0;
+}

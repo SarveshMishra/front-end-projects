@@ -1,0 +1,61 @@
+body {
+	background-color: hsl(217, 54%, 11%);
+}
+
+.main-block {
+	width: 320px;
+	height: fit-content;
+	background-color: hsl(216, 50%, 16%);
+	margin: auto;
+	border-radius: 1rem;
+}
+.inside-edge {
+	padding: 20px;
+}
+
+.image {
+	height: 280px;
+	width: 280px;
+}
+.label {
+	color: white;
+	font-family: "Outfit", sans-serif;
+	font-weight: 600;
+}
+.para {
+	color: hsl(215, 51%, 70%);
+	font-family: "Outfit", sans-serif;
+	font-weight: 300;
+}
+
+.creator {
+	height: 50px;
+	width: 50px;
+}
+.price {
+	color: hsl(178, 100%, 50%);
+	font-family: "Outfit", sans-serif;
+	font-weight: 400;
+    text-align: left;
+}
+
+.time-left {
+	color: hsl(215, 51%, 70%);
+	font-family: "Outfit", sans-serif;
+	font-weight: 400;
+	text-align: right;
+}
+.creator-text {
+	color: hsl(215, 51%, 70%);
+	font-family: "Outfit", sans-serif;
+	font-weight: 400;
+    /* vertical-align: middle; */
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
