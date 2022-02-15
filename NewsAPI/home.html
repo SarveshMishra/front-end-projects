@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>News Home</title> 
+  <!-- <link rel="stylesheet" href="styles.css" /> --> 
+  <style>
+      /* Navbar */
+
+      .navbar {
+        border: 2px solid black;
+        height: 50px;
+        width: 100vw;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+      }
+
+      .navbar > a {
+        margin: 15px;
+        font-size: 20px;
+      }
+
+      /* Container */
+      .container {
+        display: grid;
+        grid-gap: 40px;
+        grid-template-columns: 50% 50%;
+        padding: 20px;
+        color: white;
+      }
+      .container div {
+        background-color: rgb(151, 236, 215);
+      }
+
+      .sub-headline > img {
+        width: 40%;
+        height: 100%;
+      }
+      .content {
+        width: 55%;
+        height: 100%;
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 15px;
+        vertical-align: top;
+        color: #000;
+      }
+
+      .search {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: 50% 50%;
+        }
+        .container > div:nth-child(1) {
+          grid-area: 1 / 1 / 1 / span 2;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          grid-template-columns: 100%;
+        }
+        .container > div:nth-child(1) {
+          grid-area: 1 / 1 / 1/ 1;
+        }
+      }
+    </style> 
+ </head> 
+ <body> 
+  <div class="navbar"> 
+   <a href="home.html">Home</a> 
+   <a href="search.html">Search News</a> 
+  </div> 
+  <div class="container"></div> 
+  <!-- <script src="/home.js"></script> --> 
+  <script>
+      let API_KEY = "870a98ec5b69454d800468e04b722dcf";
+
+      var url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY}`;
+
+      async function getData() {
+        let data = await (await fetch(url)).json();
+
+        //   console.log(data.articles);
+        newsUI(data.articles);
+      }
+
+      getData();
+
+      function newsUI(data) {
+        console.log(data);
+
+        // Main Container
+        let container = document.querySelector(".container");
+
+        for (let i = 0; i < data.length; i++) {
+          let sub = document.createElement("div");
+          sub.setAttribute("class", "sub-headline");
+          let img = document.createElement("img");
+          img.src = data[i].urlToImage;
+
+          sub.append(img);
+
+          let content = document.createElement("div");
+          content.setAttribute("class", "content");
+
+          let span = document.createElement("span");
+          span.setAttribute("class", "sub-category");
+
+          span.innerHTML = `<b>Title:</b> ${data[i].title} <br/><br/>`;
+
+          let author = document.createElement("p");
+          author.innerHTML = `<b>Author:</b> ${data[i].author}`;
+          let link = document.createElement("p");
+
+          link.innerHTML = `<b>News Link: </b><a href="${data[i].url}" target="_blank"  >Click Here</a>`;
+
+          content.append(span, author, link);
+          sub.append(content);
+          container.append(sub);
+        }
+      }
+    </script>   
+ </body>
+</html>
