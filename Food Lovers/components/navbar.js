@@ -1,11 +1,11 @@
 async function navbar() {
   return ` <div id="navbar">
-      <img src="../img/icons8-menu.svg" alt="menu" id="menu" />
-      <img src="../img/logo.gif" alt="logo" id="logo" />
+      <img src="img/icons8-menu.svg" alt="menu" id="menu" />
+      <img src="img/logo.gif" alt="logo" id="logo" />
       <div class="links">
-        <a href="../pages/index.html">Search</a>
-        <a href="../pages/recipe.html">Recipe of the Day</a>
-        <a href="../pages/category.html">Search by Category </a>
+        <a href="index.html">Search</a>
+        <a href="recipe.html">Recipe of the Day</a>
+        <a href="category.html">Search by Category </a>
       </div>
       <div class="right">
         <input
