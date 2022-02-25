@@ -16,7 +16,7 @@ async function updateSelect() {
   //  Updating select options
   let select = document.querySelector("#category");
 
-  let url = `http://www.themealdb.com/api/json/v1/1/categories.php`;
+  let url = `https://www.themealdb.com/api/json/v1/1/categories.php`;
 
   let data = await (await fetch(url)).json();
 
@@ -44,7 +44,7 @@ async function storeData(data) {
   // Foreach not working for await in loop hence use for loop
   for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    let url = `http://www.themealdb.com/api/json/v1/1/filter.php?c=${element.strCategory}`;
+    let url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${element.strCategory}`;
     let meals;
     try {
       meals = await (await fetch(url)).json();
