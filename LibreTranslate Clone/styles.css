@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+}
+.navbar {
+  display: flex;
+  height: 60px;
+  background-color: #42a5f5;
+  color: white;
+  justify-content: space-between;
+  padding-left: 250px;
+  align-items: center;
+  flex-direction: row;
+  position: -webkit-sticky;
+  box-shadow: 0 5px 2px 0 #b4b1b1;
+  position: sticky;
+}
+.icon {
+  display: flex;
+  font-size: 30px;
+  color: white;
+}
+.icon img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.link ul {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 300px;
+}
+.link li {
+  list-style-type: none;
+  font-size: 18px;
+  margin-left: 10px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Container Part */
+.container {
+  width: 70%;
+  /* background-color: #cce; */
+  margin: 50px auto;
+}
+.container > * {
+  margin-top: 10px;
+}
+.container > h1 {
+  font-size: 2.9rem;
+  text-align: center;
+  font-weight: 400;
+}
+/* Button Part */
+.btn {
+  height: 30px;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+}
+
+.translateText,
+.translateFile {
+  width: fit-content;
+  height: 16px;
+  background-color: #42a5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  box-shadow: 2px 2px #c3c3c3;
+  border-radius: 2px;
+  margin-left: 20px;
+  font-weight: 100;
+}
+.translateText:hover,
+.translateFile:hover {
+  box-shadow: 0 2px 2px 0 #8b8b8b;
+  cursor: pointer;
+}
+
+.translateFile {
+  background-color: white;
+  color: #42a5f5;
+  margin-right: 20px;
+  border: .5px solid #e9e9e9;
+}
+.translateFile:hover {
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+
+.material-icons {
+  margin-right: 10px;
+}
+
+.textArea {
+  display: flex;
+  height: 350px;
+}
+
+.inputArea {
+  flex: 1;
+  /* background-color: orange; */
+  margin-right: 20px;
+  box-sizing: border-box;
+}
+.outputArea {
+  flex: 1;
+  /* background-color: cyan; */
+  margin-left: 20px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  height: 80%;
+  border: 1px solid #cecece;
+  background-color: #f3f3f3;
+  font-size: 30px;
+}

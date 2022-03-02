@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./styles.css" /> -->
+
+    <style>
+      .search_bar {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+      }
+      input {
+        width: 150px;
+        height: 40px;
+        padding: 10px 20px 10px 20px;
+        border-radius: 28px;
+      }
+      input:focus {
+        width: 250px;
+      }
+      button {
+        margin-left: 20px;
+        background: #3498db;
+        border-radius: 28px;
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+      .weather_box {
+        display: inline-block;
+        width: 30%;
+        margin: 50px;
+      }
+      .map_box {
+        margin: 50px;
+        display: inline-block;
+        width: 30%;
+      }
+      .forecast {
+        display: flex;
+        justify-content: center;
+      }
+      .daily_div {
+        display: inline-block;
+        text-align: center;
+        margin: 0 10px;
+        background-color: rgb(109, 108, 108);
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search_bar">
+      <input type="text" id="search" placeholder="Please Enter City Name" />
+      <button type="submit" onclick="fetchLongLat()">Search</button>
+    </div>
+    <div class="container"></div>
+    <div class="forecast"></div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
