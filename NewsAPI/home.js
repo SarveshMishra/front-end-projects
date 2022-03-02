@@ -1,60 +1,62 @@
-let API_KEY = "870a98ec5b69454d800468e04b722dcf";
+// Express Server
+const express = require("express");
+const bodyParser = require("body-parser");
 
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/", function (req, res) {
+	res.sendFile(__dirname + "/home.html");
+});
+
+app.listen(3000, function () {
+	console.log("Server is running on port 3000");
+});
+
+// Main Js
+let API_KEY = "870a98ec5b69454d800468e04b722dcf";
 
 var url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${API_KEY}`;
 
-
 async function getData() {
-  let data = await (await fetch(url)).json();
+	let data = await (await fetch(url)).json();
 
-
-  //   console.log(data.articles);
-  newsUI(data.articles);
+	//   console.log(data.articles);
+	newsUI(data.articles);
 }
-
 
 getData();
 
-
 function newsUI(data) {
-  console.log(data);
+	console.log(data);
 
+	// Main Container
+	let container = document.querySelector(".container");
 
-  // Main Container
-  let container = document.querySelector(".container");
+	for (let i = 0; i < data.length; i++) {
+		let sub = document.createElement("div");
+		sub.setAttribute("class", "sub-headline");
+		let img = document.createElement("img");
+		img.src = data[i].urlToImage;
 
+		sub.append(img);
 
-  for (let i = 0; i < data.length; i++) {
-    let sub = document.createElement("div");
-    sub.setAttribute("class", "sub-headline");
-    let img = document.createElement("img");
-    img.src = data[i].urlToImage;
+		let content = document.createElement("div");
+		content.setAttribute("class", "content");
 
+		let span = document.createElement("span");
+		span.setAttribute("class", "sub-category");
 
-    sub.append(img);
+		span.innerHTML = `<b>Title:</b> ${data[i].title} <br/><br/>`;
 
+		let author = document.createElement("p");
+		author.innerHTML = `<b>Author:</b> ${data[i].author}`;
+		let link = document.createElement("p");
 
-    let content = document.createElement("div");
-    content.setAttribute("class", "content");
+		link.innerHTML = `<b>News Link: </b><a href="${data[i].url}" target="_blank"  >Click Here</a>`;
 
-
-    let span = document.createElement("span");
-    span.setAttribute("class", "sub-category");
-
-
-    span.innerHTML = `<b>Title:</b> ${data[i].title} <br/><br/>`;
-
-
-    let author = document.createElement("p");
-    author.innerHTML = `<b>Author:</b> ${data[i].author}`;
-    let link = document.createElement("p");
-
-
-    link.innerHTML = `<b>News Link: </b><a href="${data[i].url}" target="_blank"  >Click Here</a>`;
-
-
-    content.append(span, author, link);
-    sub.append(content);
-    container.append(sub);
-  }
+		content.append(span, author, link);
+		sub.append(content);
+		container.append(sub);
+	}
 }
