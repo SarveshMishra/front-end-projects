@@ -1,12 +1,12 @@
 import { topHeader, searchBox, links } from "../components/header/navbar.js";
 import showList from "../components/header/index.js";
-
+import changeLinkColor from "../scripts/changeLinkColor.js";
 // Navbar Import section
 document.querySelector(".header-sec-1").innerHTML = await topHeader();
 document.querySelector(".search-box").innerHTML = await searchBox();
 
 window.hide = hide;
-
+changeLinkColor()
 document.getElementById("location").addEventListener("click", showList);
 
 function hide() {
